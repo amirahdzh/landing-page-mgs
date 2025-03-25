@@ -46,7 +46,7 @@ onClickOutside(languageDropdownRef, () => {
 </script>
 
 <template>
-  <header class="w-full fixed z-10 top-0 left-0 right-0 bg-white shadow-md">
+  <header class="w-full fixed min-h-[80px] z-10 top-0 left-0 right-0 bg-white">
     <div
       class="h-[4rem] px-20 py-10 flex justify-between items-center max-md:px-5"
     >

@@ -50,27 +50,27 @@
       <div class="flex space-x-4">
         <a
           href="#"
-          class="p-2 bg-white/10 rounded-md hover:bg-white/20 transition flex items-center justify-center w-10 h-10"
+          class="p-2 bg-white rounded-md hover:bg-gray-100 transition flex items-center justify-center w-10 h-10"
         >
-          <i class="pi pi-linkedin text-xl"></i>
+          <i class="pi pi-linkedin text-xl text-[#061951]"></i>
         </a>
         <a
           href="#"
-          class="p-2 bg-white/10 rounded-md hover:bg-white/20 transition flex items-center justify-center w-10 h-10"
+          class="p-2 bg-white rounded-md hover:bg-gray-100 transition flex items-center justify-center w-10 h-10"
         >
-          <i class="pi pi-facebook text-xl"></i>
+          <i class="pi pi-facebook text-xl text-[#061951]"></i>
         </a>
         <a
           href="#"
-          class="p-2 bg-white/10 rounded-md hover:bg-white/20 transition flex items-center justify-center w-10 h-10"
+          class="p-2 bg-white rounded-md hover:bg-gray-100 transition flex items-center justify-center w-10 h-10"
         >
-          <i class="pi pi-instagram text-xl"></i>
+          <i class="pi pi-instagram text-xl text-[#061951]"></i>
         </a>
         <a
           href="#"
-          class="p-2 bg-white/10 rounded-md hover:bg-white/20 transition flex items-center justify-center w-10 h-10"
+          class="p-2 bg-white rounded-md hover:bg-gray-100 transition flex items-center justify-center w-10 h-10"
         >
-          <i class="pi pi-twitter text-xl"></i>
+          <i class="pi pi-twitter text-xl text-[#061951]"></i>
         </a>
       </div>
       <RouterLink to="/sitemap" class="mt-4 lg:mt-0 text-sm hover:underline"
