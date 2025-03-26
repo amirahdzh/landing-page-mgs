@@ -77,7 +77,7 @@ Pastikan Anda sudah menginstal **Node.js** (disarankan versi terbaru LTS) dan **
    Buka `http://localhost:5173/` untuk melihat hasilnya.
 
 ## 📌 Fitur Utama
-✅ Responsif sesuai desain Figma yang diberikan  
+✅ Sesuai desain Figma yang diberikan  
 ✅ Implementasi Tailwind CSS tanpa `<style>` dalam komponen  
 ✅ Struktur proyek yang modular dan maintainable  
 ✅ Konsumsi API untuk Services (GET), Whies (GET), Contacts (POST)
@@ -85,6 +85,7 @@ Pastikan Anda sudah menginstal **Node.js** (disarankan versi terbaru LTS) dan **
 ## 📝 Catatan Tambahan
 - Saya telah memastikan bahwa tampilan dan fungsionalitas sesuai dengan desain yang diberikan.
 - Tampilan responsif merupakan pandangan subjektif saya karena desain yang disediakan tidak memberikan tampilan referensi selain layar besar.
+- Akan ada banyak peringatan `[Vue Router warn]: No match found for location with path` pada console karena saya mengimplementasikan <RouterLink /> dengan path yang belum didefinisikan di src/router/index.ts.
 
 ---
 Terima kasih! 🚀
