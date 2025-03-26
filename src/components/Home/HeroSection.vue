@@ -1,16 +1,16 @@
 <template>
   <section
-    class="relative mt-20 bg-gray-100 py-20 px-6 lg:px-24 flex flex-col lg:flex-row items-center lg:gap-x-12"
+    class="relative mt-20 py-20 bg-gray-100 px-6 lg:px-24 flex flex-col lg:flex-row items-center lg:gap-x-12"
   >
     <!-- Background Circle -->
     <div
-      class="absolute left-0 top-1/4 w-48 h-48 bg-red-100 rounded-full -z-10"
+      class="absolute left-10 top-1/8 w-36 h-36 bg-accent/10 rounded-full z-0"
     ></div>
 
     <!-- Left Text Content -->
-    <div class="lg:w-1/2 text-center lg:text-left">
+    <div class="lg:w-1/2 text-center lg:text-left z-10">
       <h2 class="text-accent text-lg font-semibold">We Are Here</h2>
-      <h1 class="text-4xl font-bold text-gray-900 mt-2">
+      <h1 class="text-5xl font-medium text-gray-900 mt-2">
         IT Consultant & <br />
         Outsourcing
       </h1>

@@ -1,8 +1,10 @@
 <template>
   <section class="py-20 relative bg-white overflow-hidden">
     <div class="container mx-auto px-6 text-center relative max-w-screen-lg">
-      <!-- Gambar -->
-      <div class="relative w-full lg:w-3/4">
+      <!-- Gambar (disembunyikan di layar kecil) -->
+      <div
+        class="relative w-full lg:-translate-x-15 lg:w-3/4 mx-auto hidden md:block"
+      >
         <img
           src="/src/assets/about-us.png"
           alt="About"
@@ -12,26 +14,29 @@
 
       <!-- Kotak Merah (Konten) -->
       <div
-        class="bg-accent/90 text-white p-8 lg:p-12 w-full max-w-[400px] absolute right-6 top-1/2 transform -translate-y-1/2"
+        class="bg-accent/90 text-white text-left p-8 sm:p-12 w-full sm:max-w-[90%] sm:mx-auto md:max-w-[320px] mt-6 md:mt-0 md:absolute md:right-6 md:top-1/2 md:transform md:-translate-y-1/2"
       >
-        <h3 class="text-3xl font-bold">About Us</h3>
-        <p class="mt-4 leading-relaxed">
+        <h3 class="text-2xl sm:text-3xl font-bold">About Us</h3>
+        <p class="mt-4 leading-relaxed text-justify">
           As an Information Technology Outsourcing or (IT Outsourcing) company,
           we help your business to grow through qualified human resources.
         </p>
-        <button
-          class="mt-6 bg-white text-red-600 px-6 py-3 rounded-md font-semibold hover:bg-gray-200 transition w-max"
+        <RouterLink
+          to="/about"
+          class="mt-6 bg-white text-accent px-6 py-3 rounded-md font-semibold hover:bg-gray-200 transition w-max block"
         >
           About Our Company
-        </button>
+        </RouterLink>
       </div>
     </div>
 
-    <!-- Vector Decoration -->
-    <img
-      src="/src/components/Vector/service-vector.svg"
-      alt="Service Vector"
-      class="absolute right-0 bottom-0 hidden lg:block w-1/3 opacity-50"
-    />
+    <!-- SVG Background -->
+    <div class="absolute top-10 -right-4 pointer-events-none">
+      <img
+        src="/src/components/Vector/service-vector.svg"
+        alt="Background Vector"
+        class="w-[88px] h-auto max-w-[200px] opacity-50 transform rotate-[5deg]"
+      />
+    </div>
   </section>
 </template>

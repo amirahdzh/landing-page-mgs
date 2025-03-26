@@ -1,13 +1,17 @@
 <template>
-  <section class="bg-red-600 text-white px-6 py-16 lg:py-24 text-center">
-    <h2 class="text-lg font-semibold">Our Purpose</h2>
-    <h3 class="text-3xl font-bold mt-2">Technology Inclusivity</h3>
-    <!-- <div class="mt-6">
+  <section
+    class="relative bg-accent text-white px-6 lg:py-28 text-center overflow-hidden min-h-[300px]"
+  >
+    <h2 class="text-lg">Our Purpose</h2>
+    <h3 class="text-4xl font-medium mt-2">Technology Inclusivity</h3>
+
+    <!-- Vector sebagai background -->
+    <div class="absolute inset-0 flex items-center justify-end">
       <img
-        src="/src/assets/hero-1.png"
+        src="../Vector/Purpose.png"
         alt="Tech Background"
-        class="mx-auto w-full max-w-2xl"
+        class="max-w-[500px] translate-x-5"
       />
-    </div> -->
+    </div>
   </section>
 </template>

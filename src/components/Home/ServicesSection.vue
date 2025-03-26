@@ -8,16 +8,13 @@ const { data, error, isFetching } = useFetch(
   "https://strapi-admin.megagigasolusindo.co.id/api/services?locale=id"
 ).json();
 
-// Default icon jika API tidak menyediakannya
-const defaultIcon = "/src/assets/default-service.svg";
-
 // Format data untuk ditampilkan
 const services = computed(() => {
   return (
     data.value?.data.map((item: any) => ({
-      icon: item.icon || defaultIcon, // Pakai default jika `icon` null
-      title: item.title,
-      description: item.description,
+      icon: item?.icon || "pi pi-cog", // GUNAKAN GAMBAR DEFAULT
+      title: item?.title || "No Title",
+      description: item?.description || "No Description Available",
     })) || []
   );
 });
@@ -26,17 +23,17 @@ const services = computed(() => {
 <template>
   <section class="py-20 relative bg-white overflow-hidden">
     <!-- SVG Background -->
-    <div class="absolute top-0 left-0 pointer-events-none">
+    <div class="absolute top-10 -left-4 pointer-events-none">
       <img
         src="/src/components/Vector/service-vector.svg"
         alt="Background Vector"
-        class="w-auto h-auto max-w-[250px] opacity-50"
+        class="w-[72px] h-auto max-w-[200px] opacity-50 scale-x-[-1] scale-y-[-1] transform rotate-[8deg]"
       />
     </div>
 
     <div class="container mx-auto px-6 text-center relative max-w-screen-lg">
       <h2 class="text-red-600 font-semibold text-lg">What we Have</h2>
-      <h1 class="text-3xl font-bold text-gray-900 mt-2">Our Services</h1>
+      <h1 class="text-4xl font-medium text-gray-900 mt-2">Our Services</h1>
 
       <!-- Loading State -->
       <p v-if="isFetching" class="text-gray-500 mt-6">Loading...</p>
