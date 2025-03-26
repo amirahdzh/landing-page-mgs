@@ -134,7 +134,7 @@ const handleSubmit = async () => {
           <p v-if="successMessage" class="text-green-600 mb-4">
             {{ successMessage }}
           </p>
-          <p v-if="errorMessage" class="text-red-600 mb-4">
+          <p v-if="errorMessage" class="text-accent mb-4">
             {{ errorMessage }}
           </p>
 
@@ -142,7 +142,7 @@ const handleSubmit = async () => {
           <button
             @click="handleSubmit"
             :disabled="loading"
-            class="bg-red-600 text-white px-6 py-3 rounded-md hover:bg-red-700 disabled:bg-gray-400 w-full"
+            class="bg-accent text-white px-6 py-3 rounded-md hover:bg-accent/80 disabled:bg-gray-400 w-full cursor-pointer"
           >
             {{ loading ? "Sending..." : "Send" }}
           </button>

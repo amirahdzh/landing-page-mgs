@@ -1,4 +1,0 @@
-use vue use untuk handle:
-- onClickOutside
-
-primeicons for icon

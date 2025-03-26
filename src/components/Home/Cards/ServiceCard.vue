@@ -8,7 +8,7 @@ defineProps<{
 
 <template>
   <div
-    class="border rounded-xl p-8 shadow-sm hover:shadow-md transition bg-white flex flex-col items-start"
+    class="border border-gray-400 rounded-xl p-8 transition bg-white flex flex-col items-start"
   >
     <!-- Gunakan gambar jika icon adalah URL -->
     <img

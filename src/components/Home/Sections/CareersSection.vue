@@ -8,13 +8,13 @@
           class="w-full h-80 object-cover rounded-md"
         />
         <div
-          class="absolute inset-0 flex flex-col justify-center items-center text-white text-center px-4"
+          class="absolute inset-0 flex flex-col justify-center items-center text-white text-center px-8"
         >
-          <h3 class="text-2xl lg:text-3xl font-bold">
+          <h3 class="text-4xl lg:text-4xl font-semibold">
             Build your Career while building inclusive technology with us
           </h3>
           <button
-            class="mt-6 bg-red-600 text-white px-6 py-3 rounded-md hover:bg-red-700"
+            class="mt-6 bg-accent text-white px-6 py-3 rounded-md hover:bg-accent/80 cursor-pointer"
           >
             Join Now
           </button>

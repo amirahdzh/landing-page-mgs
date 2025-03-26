@@ -20,7 +20,7 @@
         <br />Elevate your business with technology.
       </p>
       <button
-        class="mt-6 bg-accent text-white px-6 py-3 rounded-md hover:bg-red-700"
+        class="mt-6 bg-accent text-white px-6 py-3 rounded-md hover:bg-accent/80 cursor-pointer"
       >
         Contact Us
       </button>
