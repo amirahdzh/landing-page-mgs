@@ -21,7 +21,7 @@ defineProps<{
     <!-- Gunakan default image jika icon tidak ada -->
     <img
       v-else-if="!icon || icon === ''"
-      src="/src/components/Vector/why.png"
+      src="/src/assets/home/why-us.png"
       alt="Default Icon"
       class="w-14 h-14 mb-4"
     />

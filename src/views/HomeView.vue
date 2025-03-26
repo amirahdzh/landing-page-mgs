@@ -2,7 +2,7 @@
   <div>
     <HeroSection />
     <ServicesSection />
-    <WhyChooseUs />
+    <WhyUsSection />
     <AboutSection />
     <PurposeSection />
     <CareersSection />
@@ -11,11 +11,11 @@
 </template>
 
 <script setup>
-import HeroSection from "../components/Home/HeroSection.vue";
-import ServicesSection from "../components/Home/ServicesSection.vue";
-import WhyChooseUs from "../components/Home/WhyChooseUs.vue";
-import AboutSection from "../components/Home/AboutSection.vue";
-import PurposeSection from "../components/Home/PurposeSection.vue";
-import CareersSection from "../components/Home/CareersSection.vue";
-import ContactSection from "../components/Home/ContactSection.vue";
+import HeroSection from "../components/Home/Sections/HeroSection.vue";
+import ServicesSection from "../components/Home/Sections/ServicesSection.vue";
+import WhyUsSection from "../components/Home/Sections/WhyUsSection.vue";
+import AboutSection from "../components/Home/Sections/AboutSection.vue";
+import PurposeSection from "../components/Home/Sections/PurposeSection.vue";
+import CareersSection from "../components/Home/Sections/CareersSection.vue";
+import ContactSection from "../components/Home/Sections/ContactSection.vue";
 </script>

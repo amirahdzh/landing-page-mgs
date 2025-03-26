@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useFetch } from "@vueuse/core";
 import { computed } from "vue";
-import ServiceCard from "./ServiceCard.vue";
+import ServiceCard from "../Cards/ServiceCard.vue";
 
 // Fetch data dari API
 const { data, error, isFetching } = useFetch(
@@ -25,21 +25,21 @@ const services = computed(() => {
     <!-- SVG Background -->
     <div class="absolute top-10 -left-4 pointer-events-none">
       <img
-        src="/src/components/Vector/service-vector.svg"
+        src="/src/assets/home/vector.svg"
         alt="Background Vector"
         class="w-[72px] h-auto max-w-[200px] opacity-50 scale-x-[-1] scale-y-[-1] transform rotate-[8deg]"
       />
     </div>
 
     <div class="container mx-auto px-6 text-center relative max-w-screen-lg">
-      <h2 class="text-red-600 font-semibold text-lg">What we Have</h2>
-      <h1 class="text-4xl font-medium text-gray-900 mt-2">Our Services</h1>
+      <h2 class="text-accent font-semibold text-lg">What we Have</h2>
+      <h1 class="text-4xl font-medium text-dark mt-2">Our Services</h1>
 
       <!-- Loading State -->
-      <p v-if="isFetching" class="text-gray-500 mt-6">Loading...</p>
+      <p v-if="isFetching" class="text-neutral mt-6">Loading...</p>
 
       <!-- Error State -->
-      <p v-else-if="error" class="text-red-500 mt-6">
+      <p v-else-if="error" class="text-accent mt-6">
         Failed to load services. Please try again.
       </p>
 

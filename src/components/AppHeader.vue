@@ -7,6 +7,15 @@ import { onClickOutside } from "@vueuse/core";
 const activeDropdown = ref<string | null>(null);
 const servicesDropdownRef = ref(null);
 const aboutDropdownRef = ref(null);
+const isMenuOpen = ref(false);
+
+// const isServicesOpen = ref(false);
+// const isAboutOpen = ref(false);
+const isLanguageOpen = ref(false);
+
+const toggleMenu = () => {
+  isMenuOpen.value = !isMenuOpen.value;
+};
 
 const toggleDropdown = (menu: string) => {
   activeDropdown.value = activeDropdown.value === menu ? null : menu;
@@ -43,6 +52,12 @@ const selectLanguage = (lang: string) => {
 onClickOutside(languageDropdownRef, () => {
   languageDropdownActive.value = false;
 });
+
+const activeMobileDropdown = ref<string | null>(null);
+const toggleMobileDropdown = (menu: string) => {
+  activeMobileDropdown.value =
+    activeMobileDropdown.value === menu ? null : menu;
+};
 </script>
 
 <template>
@@ -55,8 +70,8 @@ onClickOutside(languageDropdownRef, () => {
         <img src="/src/assets/main-logo.png" alt="Logo" class="w-32 h-auto" />
       </RouterLink>
 
-      <!-- Navigation -->
-      <nav class="flex items-center gap-10 text-sm font-medium max-lg:hidden">
+      <!-- Desktop Navigation -->
+      <nav class="hidden lg:flex items-center gap-10 text-sm font-medium">
         <!-- Our Services Dropdown -->
         <div class="relative" ref="servicesDropdownRef">
           <div
@@ -91,7 +106,7 @@ onClickOutside(languageDropdownRef, () => {
                 <li>
                   <RouterLink
                     to="/staff-augmentation"
-                    class="text-gray-700 hover:text-accent whitespace-nowrap"
+                    class="text-neutral hover:text-accent whitespace-nowrap"
                   >
                     Independent Staff Augmentation
                   </RouterLink>
@@ -99,7 +114,7 @@ onClickOutside(languageDropdownRef, () => {
                 <li>
                   <RouterLink
                     to="/team-augmentation"
-                    class="text-gray-700 hover:text-accent"
+                    class="text-neutral hover:text-accent"
                   >
                     Team Augmentation
                   </RouterLink>
@@ -107,7 +122,7 @@ onClickOutside(languageDropdownRef, () => {
                     <li>
                       <RouterLink
                         to="/team-augmentation"
-                        class="text-gray-500 hover:text-accent"
+                        class="text-neutral hover:text-accent"
                       >
                         IT Managed Services
                       </RouterLink>
@@ -115,7 +130,7 @@ onClickOutside(languageDropdownRef, () => {
                     <li>
                       <RouterLink
                         to="/team-augmentation"
-                        class="text-gray-500 hover:text-accent"
+                        class="text-neutral hover:text-accent"
                       >
                         Software Development
                       </RouterLink>
@@ -134,14 +149,14 @@ onClickOutside(languageDropdownRef, () => {
                 <li>
                   <RouterLink
                     to="/digitisation"
-                    class="text-gray-700 hover:text-accent"
+                    class="text-neutral hover:text-accent"
                     >Digitisation</RouterLink
                   >
                 </li>
                 <li>
                   <RouterLink
                     to="/digitalisation"
-                    class="text-gray-700 hover:text-accent"
+                    class="text-neutral hover:text-accent"
                     >Digitalisation</RouterLink
                   >
                 </li>
@@ -176,17 +191,17 @@ onClickOutside(languageDropdownRef, () => {
           >
             <RouterLink
               to="/about-mgs"
-              class="block p-2 text-gray-700 hover:text-accent"
+              class="block p-2 text-neutral hover:text-accent"
               >About MGS</RouterLink
             >
             <RouterLink
               to="/case-study"
-              class="block p-2 text-gray-700 hover:text-accent"
+              class="block p-2 text-neutral hover:text-accent"
               >Case Study</RouterLink
             >
             <RouterLink
               to="/blog"
-              class="block p-2 text-gray-700 hover:text-accent"
+              class="block p-2 text-neutral hover:text-accent"
               >Blog</RouterLink
             >
           </div>
@@ -226,19 +241,168 @@ onClickOutside(languageDropdownRef, () => {
           >
             <div
               @click="selectLanguage('ID')"
-              class="cursor-pointer px-4 py-2 text-gray-700 hover:bg-accent hover:text-white"
+              class="cursor-pointer px-4 py-2 text-neutral hover:bg-accent hover:text-white"
             >
               ID
             </div>
             <div
               @click="selectLanguage('EN')"
-              class="cursor-pointer px-4 py-2 text-gray-700 hover:bg-accent hover:text-white"
+              class="cursor-pointer px-4 py-2 text-neutral hover:bg-accent hover:text-white"
             >
               EN
             </div>
           </div>
         </div>
       </nav>
+
+      <!-- Hamburger Menu -->
+      <button
+        @click="toggleMenu"
+        class="lg:hidden text-neutral focus:outline-none"
+      >
+        <i
+          :class="isMenuOpen ? 'pi pi-times' : 'pi pi-bars'"
+          class="w-8 h-8"
+        ></i>
+      </button>
+
+      <!-- Mobile Menu -->
+      <!-- Mobile Navigation -->
+      <div
+        v-if="isMenuOpen"
+        class="absolute top-full right-5 w-full max-w-[300px] bg-white shadow-md rounded-md mt-2 max-lg:block p-3"
+      >
+        <nav class="flex flex-col space-y-3 text-sm font-semibold">
+          <!-- Our Services Dropdown -->
+          <div>
+            <div
+              @click="toggleMobileDropdown('services')"
+              class="flex justify-between px-3 py-2 rounded-md cursor-pointer hover:bg-gray-100"
+            >
+              <p>Our Services</p>
+              <i
+                :class="
+                  activeMobileDropdown === 'services'
+                    ? 'pi pi-chevron-up'
+                    : 'pi pi-chevron-down'
+                "
+              ></i>
+            </div>
+            <div v-if="activeMobileDropdown === 'services'" class="pl-3 mt-1">
+              <ul class="space-y-1">
+                <li>
+                  <RouterLink
+                    to="/staff-augmentation"
+                    class="hover:text-accent font-normal"
+                    >Independent Staff Augmentation</RouterLink
+                  >
+                </li>
+                <li>
+                  <RouterLink
+                    to="/team-augmentation"
+                    class="hover:text-accent font-normal"
+                    >Team Augmentation</RouterLink
+                  >
+                  <ul class="pl-4 mt-1 space-y-1 text-sm">
+                    <li>
+                      <RouterLink
+                        to="/team-augmentation"
+                        class="hover:text-accent font-normal text-neutral"
+                        >IT Managed Services</RouterLink
+                      >
+                    </li>
+                    <li>
+                      <RouterLink
+                        to="/team-augmentation"
+                        class="hover:text-accent font-normal text-neutral"
+                        >Software Development</RouterLink
+                      >
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- About Dropdown -->
+          <div>
+            <div
+              @click="toggleMobileDropdown('about')"
+              class="flex justify-between px-3 py-2 rounded-md cursor-pointer hover:bg-gray-100"
+            >
+              <p>About</p>
+              <i
+                :class="
+                  activeMobileDropdown === 'about'
+                    ? 'pi pi-chevron-up'
+                    : 'pi pi-chevron-down'
+                "
+              ></i>
+            </div>
+            <div v-if="activeMobileDropdown === 'about'" class="pl-3 mt-1">
+              <ul class="space-y-1">
+                <li>
+                  <RouterLink
+                    to="/about-mgs"
+                    class="hover:text-accent font-normal"
+                    >About MGS</RouterLink
+                  >
+                </li>
+                <li>
+                  <RouterLink
+                    to="/case-study"
+                    class="hover:text-accent font-normal"
+                    >Case Study</RouterLink
+                  >
+                </li>
+                <li>
+                  <RouterLink to="/blog" class="hover:text-accent font-normal"
+                    >Blog</RouterLink
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Career -->
+          <RouterLink
+            to="/career"
+            class="px-3 py-2 rounded-md hover:bg-gray-100"
+            >Career</RouterLink
+          >
+
+          <!-- Language Switcher -->
+          <div>
+            <div
+              @click="isLanguageOpen = !isLanguageOpen"
+              class="flex justify-between px-3 py-2 rounded-md cursor-pointer hover:bg-gray-100"
+            >
+              <p>Language</p>
+              <i
+                :class="
+                  isLanguageOpen ? 'pi pi-chevron-up' : 'pi pi-chevron-down'
+                "
+              ></i>
+            </div>
+            <div v-if="isLanguageOpen" class="pl-3 mt-1">
+              <ul class="space-y-1">
+                <li
+                  @click="selectLanguage('ID')"
+                  class="cursor-pointer hover:text-accent"
+                >
+                  ID
+                </li>
+                <li
+                  @click="selectLanguage('EN')"
+                  class="cursor-pointer hover:text-accent"
+                >
+                  EN
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
     </div>
   </header>
 </template>

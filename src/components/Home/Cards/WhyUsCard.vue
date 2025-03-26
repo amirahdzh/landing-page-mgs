@@ -5,12 +5,13 @@
 
     <h4 class="text-xl font-semibold relative inline-block">
       {{ title }}
-      <!-- <span
-        class="absolute left-0 bottom-0 w-full h-1 bg-red-600 opacity-50 blur-md"
-      ></span> -->
-      <span class="absolute left-0 bottom-0 w-10 h-[4px] bg-red-600"></span>
+
+      <span
+        class="absolute left-0 bottom-[-8px] h-[6px] w-32 bg-gradient-to-r from-accent to-transparent"
+      ></span>
     </h4>
-    <p class="mt-2 text-gray-600">{{ description }}</p>
+
+    <p class="mt-6 text-neutral">{{ description }}</p>
   </div>
 </template>
 

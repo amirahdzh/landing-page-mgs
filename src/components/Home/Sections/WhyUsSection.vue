@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useFetch } from "@vueuse/core";
 import { computed } from "vue";
-import WhyCard from "./WhyCard.vue";
+import WhyCard from "../Cards/WhyUsCard.vue";
 
 // Fetch data from API
 const { data, error, isFetching } = useFetch(
@@ -9,13 +9,13 @@ const { data, error, isFetching } = useFetch(
 ).json();
 
 // Default icon dari file lokal
-import defaultIcon from "@/components/Vector/why.png";
+import defaultIcon from "/src/assets/home/why-us.png";
 
 // Format data untuk ditampilkan
 const reasons = computed(() => {
   return (
     data.value?.data.map((item: any) => ({
-      icon: defaultIcon, // Gunakan gambar default jika API tidak menyediakan icon
+      icon: item.icon || defaultIcon, // Gunakan gambar default jika API tidak menyediakan icon
       title: item.title || "No Title",
       description: item.description || "No Description Available",
     })) || []

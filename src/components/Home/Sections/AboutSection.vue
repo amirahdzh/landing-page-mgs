@@ -6,7 +6,7 @@
         class="relative w-full lg:-translate-x-15 lg:w-3/4 mx-auto hidden md:block"
       >
         <img
-          src="/src/assets/about-us.png"
+          src="/src/assets/home/about-us.png"
           alt="About"
           class="w-full rounded-2xl xl:max-w-[856px]"
         />
@@ -33,7 +33,7 @@
     <!-- SVG Background -->
     <div class="absolute top-10 -right-4 pointer-events-none">
       <img
-        src="/src/components/Vector/service-vector.svg"
+        src="/src/assets/home/vector.svg"
         alt="Background Vector"
         class="w-[88px] h-auto max-w-[200px] opacity-50 transform rotate-[5deg]"
       />

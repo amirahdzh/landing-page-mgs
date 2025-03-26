@@ -3,7 +3,7 @@
     <div class="container mx-auto px-6 text-center relative max-w-screen-lg">
       <div class="relative">
         <img
-          src="/src/assets/career.png"
+          src="/src/assets/home/career.png"
           alt="Career"
           class="w-full h-80 object-cover rounded-md"
         />
