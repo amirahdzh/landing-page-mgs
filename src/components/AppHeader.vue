@@ -8,6 +8,7 @@ const activeDropdown = ref<string | null>(null);
 const servicesDropdownRef = ref(null);
 const aboutDropdownRef = ref(null);
 const isMenuOpen = ref(false);
+const mobileMenuRef = ref(null);
 
 // const isServicesOpen = ref(false);
 // const isAboutOpen = ref(false);
@@ -28,6 +29,10 @@ onClickOutside(servicesDropdownRef, () => {
 
 onClickOutside(aboutDropdownRef, () => {
   if (activeDropdown.value === "about") activeDropdown.value = null;
+});
+// Menutup menu saat klik di luar
+onClickOutside(mobileMenuRef, () => {
+  isMenuOpen.value = false;
 });
 
 // Class ikon dropdown
@@ -270,6 +275,7 @@ const toggleMobileDropdown = (menu: string) => {
       <!-- Mobile Navigation -->
       <div
         v-if="isMenuOpen"
+        ref="mobileMenuRef"
         class="absolute top-full right-5 w-full max-w-[300px] bg-white shadow-md rounded-md mt-2 max-lg:block p-3"
       >
         <nav class="flex flex-col space-y-3 text-sm font-semibold">
